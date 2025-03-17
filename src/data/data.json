@@ -1,0 +1,91 @@
+{
+    "carousel1": [
+        {
+            "title": "First Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        },
+        {
+            "title": "Second Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        },
+        {
+            "title": "Third Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        },
+        {
+            "title": "Fourth Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        },
+        {
+            "title": "Fourth Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        },
+        {
+            "title": "Fourth Slide",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
+            "description": "1.5%"
+        }
+    ],
+    "assetsCarousel": [
+        {
+            "title": "How it works",
+            "image": "./src/images/Asset 3.png",
+            "description": "Our partnered stores pay us a commission when you shop through ShopDonation. We turn that commission into a donation for your chosen cause, at no extra cost to you.",
+            "link": ""
+        },
+        {
+            "title": "100% transparency",
+            "image": "./src/images/Asset 2.png",
+            "description": "ShopDonation provides 100% transparency so users and causes can fully track and confirm donations.",
+            "link": ""
+        },
+        {
+            "title": "Structural donations",
+            "image": "./src/images/Asset 1.png",
+            "description": "ShopDonation is the only international platform where causes can receive <strong>structural donations</strong> from multiple countries. Shoppers can support their cause from anywhere in the world!",
+            "link": ""
+        }
+    ],
+    "causeCarousel": [
+        {
+            "name": "Oxfam Novib",
+            "image": "./src/images/cause1.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen.",
+            "amount": "15,000",
+            "link": ""
+        },
+        {
+            "name": "Oxfam Novib",
+            "image": "./src/images/cause2.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen.",
+            "amount": "45,000",
+            "link": ""
+        },
+        {
+            "name": "Oxfam Novib",
+            "image": "./src/images/cause3.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen.",
+            "amount": "25,000",
+            "link": ""
+        }
+    ],
+    "testimonialCarousel": [
+        {
+            "image": "./src/images/card_testimonials.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen."
+        },
+        {
+            "image": "./src/images/card_testimonials.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen."
+        },
+        {
+            "image": "./src/images/card_testimonials.png",
+            "description": "Stichting Babyspullen zet zich in om het effect van armoede op baby’s en jonge kinderen te verminderen."
+        }
+    ]
+}

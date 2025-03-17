@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShopDonation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="absolute top-0 left-0 w-full bg-transparent z-10">
+        <div class="max-w-screen-2xl mx-auto px-5 pt-4 sm:px-2 lg:px-4">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <img src="./src/images/logo.png" alt="ShopDonation" class="h-8 md:h-10 w-auto">
+                </div>
+                <div class="hidden lg:flex space-x-4 md:space-x-6">
+                    <ul class="hidden lg:flex space-x-5 md:space-x-7 text-white font-medium text-sm md:text-base text-shadow-lg">
+                        <li><a href="#" class="hover:opacity-75">How it works</a></li>
+                        <li><a href="#" class="hover:opacity-75">Register a cause</a></li>
+                        <li><a href="#" class="hover:opacity-75">Find a cause</a></li>
+                        <li><a href="#" class="hover:opacity-75">About us</a></li>
+                        <li><a href="#" class="hover:opacity-75">Partner with us</a></li>
+                    </ul>
+                </div>
+                <div class="hidden lg:flex space-x-3 md:space-x-5 items-center">
+                    <button id="dropdownDefaultButton" class="text-green-700 bg-slate-300 rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xs md:text-sm px-2 py-2 md:px-2.5 md:py-2.5 text-center inline-flex items-center">
+                        <img src="./src/images/UK_flag.png" alt="UK Flag" class="h-4 md:h-5">
+                        <svg class="w-2 h-2 md:w-2.5 md:h-2.5 ms-2 md:ms-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <a href="#" class="text-white text-sm md:text-base hover:opacity-75">Sign in</a>
+                    <button class="bg-yellow-400 text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-yellow-500 text-sm md:text-base">Sign up</button>
+                </div>
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-8 h-8 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-90 text-white hidden flex flex-col items-center justify-center space-y-6 text-2xl z-50">
+        <button id="close-btn" class="absolute top-5 right-5 text-white text-4xl">&times;</button>
+        <a href="#" class="hover:text-yellow-400">How it works</a>
+        <a href="#" class="hover:text-yellow-400">Register a cause</a>
+        <a href="#" class="hover:text-yellow-400">Find a cause</a>
+        <a href="#" class="hover:text-yellow-400">About us</a>
+        <a href="#" class="hover:text-yellow-400">Partner with us</a>
+        <a href="#" class="bg-gray-300 text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-gray-500">Sign in</a>
+        <button class="bg-yellow-400 text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-yellow-500">Sign up</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative text-white sm:h-[80vh] h-[70vh] flex items-center justify-start w-full px-6 sm:px-80"
+        style="background: linear-gradient(85.13deg, #083B62 8.5%, #083B62 8.51%, #369936 100.13%);">
+    
+        <!-- Left Content -->
+        <div class="max-w-xl text-left text-white sm:z-0 z-10">
+            <h1 class="text-3xl sm:text-5xl font-bold">Shop & Give back</h1>
+            <p class="mt-4 text-base sm:text-2xl">
+                Our stores will donate to your chosen cause, <br />every time you shop online using ShopDonation,<br />
+                with no extra cost.
+            </p>
+            <button
+                class="mt-8 gap-2 text-base bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold hover:bg-yellow-500">
+                Sign up and shop
+            </button>
+        </div>
+    
+        <!-- Hero Image (Sticking to Bottom) -->
+        <div>
+            <!-- Small Screens -->
+            <div class="sm:hidden absolute right-0 left-0 bottom-0">
+                <img src="./src/images/img-Hero.png" alt="Happy person shopping" class="h-auto w-full opacity-30">
+            </div>
+    
+            <!-- Large Screens -->
+            <div class="hidden sm:block absolute bottom-0 right-0 pt-16 pr-72">
+                <img src="./src/images/img-Hero.png" alt="Happy person shopping" class="w-auto max-h-full">
+            </div>
+        </div>
+    
+    </section>
+
+
+    <!-- Carousel -->
+    <section class="bg-gray-100 py-8 sm:py-20 sm:px-48">
+        <div class="flex flex-col items-center relative w-full mx-auto">
+            <div id="carousel" class="flex overflow-x-scroll scroll-smooth no-scrollbar space-x-6 px-2 sm:px-12 w-full">
+                <!-- Carousel items will be injected here by JavaScript -->
+            </div>
+            <div class="flex justify-center items-center mt-4">
+                <!-- Left Arrow -->
+                <button id="prev" class="swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 sm:absolute sm:left-0 sm:top-1/3 sm:transform sm:-translate-y-1/2 sm:shadow-lg sm:z-10">
+                    <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
+                </button>
+                <!-- Right Arrow -->
+                <button id="next" class="swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4 sm:absolute sm:right-0 sm:top-1/3 sm:transform sm:-translate-y-1/2 sm:shadow-lg sm:z-10">
+                    <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- See all stores -->
+        <div class="mt-6 flex justify-center">
+            <a href="#" class="text-blue-500 text-base font-semibold flex items-center">
+                See all stores &#x1F86A;
+            </a>
+        </div>
+    </section>
+
+    <section  class="min-h-screen w-full font-raleway flex flex-col sm:items-center items-start justify-between relative overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('./src/images/bg.png');">
+        <!-- Section 1 -->
+        <section class="h-full font-medium sm:m-10 flex flex-col md:flex-row sm:items-center items-start justify-between relative overflow-hidden">
+            <!-- Left Content -->
+            <div class="max-w-xl p-8 text-white text-left">
+                <p class="mt-4 text-base sm:text-3xl font-light">Redistributing profits to the <br />good in society.</p>
+                <img src="./src/images/Swosh.png" class="pt-4 w-32 sm:pt-4 sm:w-44 max-h-full">
+                <p class="mt-4 text-2xl sm:text-3xl font-semibold">Worldwide. <br />Sustainable impact.<br />100% transparency.</p>
+            </div>
+
+            <div class="mt-0 mx-4">
+                <img src="./src/images/Group 2201.png" class="w-auto max-h-full mx-auto">
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="w-full py-16 bg-cover bg-center">
+            <div class="max-w-7xl mx-auto px-6 md:px-0">
+                <div class="relative">
+        
+                    <!-- Mobile Carousel -->
+                    <div id="assetsCarouselMobile" class="flex overflow-hidden w-full md:hidden">
+                        <!-- JS generates slides here -->
+                    </div>
+        
+                    <!-- Desktop Carousel -->
+                    <div id="assetsCarouselDesktop" class="hidden md:flex overflow-hidden w-full gap-6 justify-center">
+                        <!-- JS generates slides here -->
+                    </div>
+        
+                    <!-- Carousel Arrows (Shared) -->
+                    <div class="flex justify-center mt-6">
+                        <button id="prevAssets"
+                            class="sm:hidden group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
+                        </button>
+                        <button id="nextAssets"
+                            class="sm:hidden group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
+                        </button>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Section 3 -->
+        <section class="w-full py-12 bg-cover bg-center">
+            <h2 class="text-gray-200 mx-14 pb-12 sm:text-4xl text-2xl font-bold text-center">Most popular causes last 30 days</h2>
+            <div class="sm:relative sm:w-4/5 max-w-8xl mx-auto text-center px-6 md:px-0">
+                <div class="relative">
+
+                    <!-- Desktop Carousel -->
+                    <div class="hidden md:flex relative w-full mx-auto space-x-4 px-12" id="desktopCauseCarousel">
+                        <!-- Cards will be injected by JavaScript -->
+                    </div>
+
+                    <!-- Mobile Carousel -->
+                    <div id="mobileCauseCarousel" class="md:hidden flex overflow-hidden w-full">
+                        <!-- Cards will be injected by JavaScript -->
+                    </div>
+
+                    <div class="col-span-3 flex justify-center mt-6">
+                        <!-- Left Arrow -->
+                        <button id="prevCause"
+                            class="md:hidden swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
+                        </button>
+                        <!-- Right Arrow -->
+                        <button id="nextCause"
+                            class="md:hidden swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- See all stores -->
+            <div class="mt-6 flex justify-center sm:justify-end sm:mx-44">
+                <a href="#" class="text-center sm:text-right sm:items-end text-gray-200 text-base font-semibold flex items-center">
+                    See all causes &#x1F86A;
+                </a>
+            </div>
+
+            <!-- Register new cause -->
+            <div class="sm:hidden mt-6 flex justify-center">
+                <a href="#" class="text-center text-gray-200 text-base font-semibold flex items-center">
+                    Register a new cause &#x1F86A;
+                </a>
+            </div>
+        
+        </section>
+
+        <!-- Section 4 -->
+        <section class="w-full py-3 mb-8 bg-cover bg-center">
+            <div class="flex justify-center items-center flex-col relative">
+                <div class="relative inline-block text-center">
+                    <h2 class="text-gray-200 mx-14 pb-2 text-sm sm:text-xl">
+                        Join thousands of shoppers and causes. Be part of systematic change.
+                    </h2>
+                    <div class="flex justify-center">
+                        <img src="./src/images/Rectangle 49.png" alt="" class="w-32 sm:w-44">
+                    </div>
+                </div>
+                <h2 class="text-gray-200 mx-6 pt-4 text-2xl sm:text-4xl font-bold text-center">
+                    Make a real difference, start using ShopDonation
+                </h2>
+            </div>
+
+            <div class="max-w-7xl mx-auto text-center px-6">
+                <div class="relative">
+                    <div id="mobileTestimonialCarousel" class="sm:hidden flex overflow-x-scroll scroll-smooth no-scrollbar space-x-6 px-2 w-full">
+                        <!-- Carousel items will be injected here by JavaScript -->
+                    </div>
+                    <div id="desktopTestimonialCarousel" class="hidden sm:grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-3 items-center gap-6 text-center px-6 md:px-0 pb-20">
+                        <!-- Carousel items will be injected here by JavaScript -->
+                    </div>
+                    <div class="col-span-3 flex justify-center">
+                        <!-- Left Arrow -->
+                        <button id="prevTestimonial"
+                            class="sm:hidden swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
+                        </button>
+                        <!-- Right Arrow -->
+                        <button id="nextTestimonial"
+                            class="sm:hidden swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4">
+                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Table Section -->
+    <section class="max-w-7xl mx-auto p-6">
+        <h2 class="sm:hidden text-xl md:text-2xl font-bold my-4 md:text-left text-center">Recent donations made</h2>
+        <div class="sm:hidden flex justify-between items-center mt-4">
+            <span class="text-base font-bold text-left">Total Donations</span>
+            <span class="text-lime-600 text-xl font-bold">$2,000.00 &#x1F86A;</span>
+        </div>
+        <div class="hidden sm:flex justify-between items-center my-4 flex-wrap">
+            <h2 class="text-xl md:text-2xl font-bold md:text-left text-center">
+                Recent donations made
+            </h2>
+            <div class="flex flex-col items-end text-right">
+                <span class="text-base font-bold">Total Donations</span>
+                <span class="text-lime-600 text-xl font-bold">$2,000.00 &#x1F86A;</span>
+            </div>
+        </div>
+    
+        <!--Mobile Table -->
+        <div class="sm:hidden relative overflow-x-auto mt-4">
+            <table class="w-full">
+                <tbody>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr
+                        class="bg-white border border-zinc-200 rounded-lg mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <td class="flex items-center justify-between w-full sm:w-auto p-3 sm:mb-0 bg-[#ECF6EA]">
+                            <div class="flex items-center">
+                                <img src="./src/images/Cause_tb.png" alt="Cause" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">Cause</p>
+                                    <p class="text-lime-600">Oxfam Novib</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-semibold text-gray-500">Amount</p>
+                                <p class="text-sky-700">US$ 12.75</p>
+                            </div>
+                        </td>
+                        <td class="flex items-center justify-between w-full p-3 sm:w-auto">
+                            <div class="flex items-center">
+                                <img src="./src/images/User_tb.png" alt="User" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">User</p>
+                                    <p class="text-gray-700">Username / Guest</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="./src/images/Shop_tb.png" alt="Shop" class="w-auto h-12">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--Desktop Table -->
+        <div class="hidden sm:block relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-black">
+                <thead class="text-lg text-black">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Cause name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Donation
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Username
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Shop name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="even:bg-[#ECF6EA]">
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/Cause_tb.png" alt="Happy person shopping" class="h-12"></div>
+                            <div>Oxfam Novib</div>
+                        </th>
+                        <td class="px-6 py-4 text-sky-700" >
+                            US$ 12.75
+                        </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/User_tb.png" alt="Happy person shopping" class="h-16"></div>
+                            <div>Flower 123</div>
+                        </th>
+                        <td class="px-6 py-4">
+                            <div><img src="./src/images/Shop_tb.png" alt="Happy person shopping" class="h-16"></div>
+                        </td>
+                    </tr>
+                    <tr class="even:bg-[#ECF6EA]">
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/Cause_tb.png" alt="Happy person shopping" class="h-12"></div>
+                            <div>Oxfam Novib</div>
+                        </th>
+                        <td class="px-6 py-4 text-sky-700" >
+                            US$ 12.75
+                        </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/User_tb.png" alt="Happy person shopping" class="h-16"></div>
+                            <div>Flower 123</div>
+                        </th>
+                        <td class="px-6 py-4">
+                            <div><img src="./src/images/Shop_tb.png" alt="Happy person shopping" class="h-16"></div>
+                        </td>
+                    </tr>
+                    <tr class="even:bg-[#ECF6EA]">
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/Cause_tb.png" alt="Happy person shopping" class="h-12"></div>
+                            <div>Oxfam Novib</div>
+                        </th>
+                        <td class="px-6 py-4 text-sky-700" >
+                            US$ 12.75
+                        </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/User_tb.png" alt="Happy person shopping" class="h-16"></div>
+                            <div>Flower 123</div>
+                        </th>
+                        <td class="px-6 py-4">
+                            <div><img src="./src/images/Shop_tb.png" alt="Happy person shopping" class="h-16"></div>
+                        </td>
+                    </tr>
+                    <tr class="even:bg-[#ECF6EA]">
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/Cause_tb.png" alt="Happy person shopping" class="h-12"></div>
+                            <div>Oxfam Novib</div>
+                        </th>
+                        <td class="px-6 py-4 text-sky-700" >
+                            US$ 12.75
+                        </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/User_tb.png" alt="Happy person shopping" class="h-16"></div>
+                            <div>Flower 123</div>
+                        </th>
+                        <td class="px-6 py-4">
+                            <div><img src="./src/images/Shop_tb.png" alt="Happy person shopping" class="h-16"></div>
+                        </td>
+                    </tr>
+                    <tr class="even:bg-[#ECF6EA]">
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/Cause_tb.png" alt="Happy person shopping" class="h-12"></div>
+                            <div>Oxfam Novib</div>
+                        </th>
+                        <td class="px-6 py-4 text-sky-700" >
+                            US$ 12.75
+                        </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-green-600 flex items-center space-x-4">
+                            <div><img src="./src/images/User_tb.png" alt="Happy person shopping" class="h-16"></div>
+                            <div>Flower 123</div>
+                        </th>
+                        <td class="px-6 py-4">
+                            <div><img src="./src/images/Shop_tb.png" alt="Happy person shopping" class="h-16"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- See More Button -->
+        <div class="flex justify-center my-6 mb-36">
+            <button class="w-full sm:w-1/4 text-white text-base px-8 py-2 rounded-full font-semibold"
+                style="background-color: #369936;">
+                See more
+            </button>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section
+        class="max-w-sm mx-6 sm:max-w-screen-xl sm:mx-auto mt-24 mb-12 text-white shadow-lg rounded-lg overflow-visible relative flex flex-col sm:flex-row items-center sm:items-start sm:h-[350px]"
+        style="background: linear-gradient(185.13deg, #369936 8.5%, #083B62 100.13%);">
+    
+        <!-- Image - adapts in size for small screens, positioned beautifully on large screens -->
+        <div
+            class="relative -top-20 w-5/6 sm:w-auto h-auto mx-auto sm:absolute sm:left-0 sm:-top-[218px] sm:ml-16 flex-shrink-0 z-20">
+            <img src="./src/images/about_image.png" alt="Woman holding phone"
+                class="object-cover w-full sm:max-h-[570px] h-auto">
+        </div>
+    
+        <!-- Content - centered on small screens, aligned right on larger ones -->
+        <div class="px-6 py-6 sm:py-24 sm:pl-[600px] sm:pr-11 text-left relative z-10">
+            <h2 class="text-xl sm:text-2xl font-bold mb-2">About ShopDonation</h2>
+            <p class="text-sm sm:text-sm leading-relaxed mb-4">
+                Through ShopDonation you can provide structural donations to nonprofits like foundations, associations,
+                charities, community projects, but also schools, hospitals, civilian initiatives, and personal initiatives
+                like fundraising challenges for causes. ShopDonation provides ongoing sponsoring as well for sports clubs,
+                music groups, and social enterprises.
+            </p>
+            <button
+                class="text-white border border-white sm:border-gray-100 font-medium sm:font-semibold text-base sm:text-sm py-2 px-4 rounded-full hover:bg-lime-600 transition duration-300">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    
+    <hr class="bg-black border"/>
+
+    <!-- Footer Section -->
+    <footer class="relative text-black py-10 px-4 md:px-20 lg:px-40">
+        <div class="mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+    
+                <!-- Left Column (Wider, on top) -->
+                <div class="md:col-span-2 mr-0 md:mr-10">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4 md:text-left text-center">
+                        Subscribe to our newsletter to receive updates!
+                    </h2>
+                    <p class="text-gray-600 md:text-left text-center">
+                        Want updates on how your donations are making an impact with your cause?
+                    </p>
+                    <div class="my-6 md:my-10">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <input type="email" id="email" placeholder="Enter email address"
+                                class="w-full  text-sm  px-4 py-2 md:mr-3 rounded-md text-black border border-gray-200 focus:ring-2 focus:ring-gray-500 outline-none mb-3 md:mb-0">
+                            <button class="w-full md:w-1/4 px-6 py-2 text-base rounded-full text-white hover:bg-lime-600" style="background-color: #369936;">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden md:block my-10">
+                        <label class="text-sm font-bold text-gray-600">Install the ShopDonation browser extension:</label>
+                        <div class="flex items-center space-x-4 mt-2">
+                            <img src="./src/images/Chrome.png" alt="Chrome" class="h-10 w-auto">
+                            <img src="./src/images/Gplay.png" alt="Chrome" class="h-10 w-auto">
+                            <img src="./src/images/Appstore.png" alt="Chrome" class="h-10 w-auto">
+                        </div>
+                    </div>
+                    
+                </div>
+    
+                <!-- mobile Columns Row 1 -->
+                <div class="md:hidden grid grid-cols-2 gap-6 text-sm">
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="font-semibold mb-2">Shops</h4>
+                        <ul class="text-gray-600 space-y-2 pt-2">
+                            <li><a href="#" class="hover:text-black">Find a shop</a></li>
+                            <li><a href="#" class="hover:text-black">Most popular webshops</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="font-semibold mb-2">Causes</h3>
+                        <ul class="text-gray-600 space-y-2 pt-2">
+                            <li><a href="#" class="hover:text-black">Find a shop</a></li>
+                            <li><a href="#" class="hover:text-black">Most popular webshops</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Mobile Columns Row 2 -->
+                <div class="md:hidden grid grid-cols-2 gap-6 text-sm">
+                    <!-- Column 4 -->
+                    <div>
+                        <h3 class="font-semibold mb-2">Service</h3>
+                        <ul class="text-gray-600 space-y-2 pt-2">
+                            <li><a href="#" class="hover:text-black">Terms & Conditions</a></li>
+                            <li><a href="#" class="hover:text-black">Privacy statement</a></li>
+                            <li><a href="#" class="hover:text-black">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Column 5 -->
+                    <div>
+                        <h3 class="font-semibold mb-2">Follow Us</h3>
+                        <ul class="text-gray-600 space-y-2 pt-2">
+                            <li><a href="#" class="hover:text-black">Facebook</a></li>
+                            <li><a href="#" class="hover:text-black">Instagram</a></li>
+                            <li><a href="#" class="hover:text-black">LinkedIn</a></li>
+                            <li><a href="#" class="hover:text-black">X (formerly Twitter)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--desktop Column 2 -->
+                <div class="hidden sm:block">
+                    <h4 class="text-base font-semibold mb-4">Shops</h4>
+                    <ul class="text-gray-600 space-y-2 pt-2">
+                        <li><a href="#" class="hover:text-black">Find a shop</a></li>
+                        <li><a href="#" class="hover:text-black">Most popular webshops</a></li>
+                    </ul>
+                </div>
+    
+                <!--desktop Column 3 -->
+                <div class="hidden sm:block">
+                    <h3 class="text-base font-semibold mb-4">Causes</h3>
+                    <ul class="text-gray-600 space-y-2 pt-2">
+                        <li><a href="#" class="hover:text-black">Find a shop</a></li>
+                        <li><a href="#" class="hover:text-black">Most popular webshops</a></li>
+                    </ul>
+                </div>
+    
+                <!--desktop Column 4 -->
+                <div class="hidden sm:block">
+                    <h3 class="text-base font-semibold mb-4">Service</h3>
+                    <ul class="text-gray-600 space-y-2 pt-2">
+                        <li><a href="#" class="hover:text-black">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-black">{Privacy statement}</a></li>
+                        <li><a href="#" class="hover:text-black">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!--desktop Column 5 -->
+                <div class="hidden sm:block">
+                    <h3 class="text-base font-semibold mb-4">Folloe Us</h3>
+                    <ul class="text-gray-600 space-y-2 pt-2">
+                        <li><a href="#" class="hover:text-black">Facebook</a></li>
+                        <li><a href="#" class="hover:text-black">Instagram</a></li>
+                        <li><a href="#" class="hover:text-black">Linkedin</a></li>
+                        <li><a href="#" class="hover:text-black">X (formerly Twitter)</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:hidden my-6 md:my-10">
+                    <label class="text-sm font-bold text-gray-600 block text-center md:text-left">
+                        Install the ShopDonation browser extension:
+                    </label>
+                
+                    <!-- Images Section -->
+                    <div class="grid grid-cols-2 gap-2 mt-2 md:flex md:justify-start md:space-x-4">
+                        <img src="./src/images/Chrome.png" alt="Chrome" class="h-10 w-auto mx-auto md:mx-0">
+                        <img src="./src/images/Gplay.png" alt="Google Play" class="h-10 w-auto mx-auto md:mx-0">
+                        <img src="./src/images/Appstore.png" alt="App Store" class="h-10 w-auto mx-auto md:mx-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Right Bottom Image -->
+        <div class="absolute -bottom-20 right-0 pointer-events-none">
+            <img src="./src/images/globe.png" alt="globe footer" class="w-60 h-auto">
+        </div>
+    </footer>
+    
+    <script src="./src/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('menu-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            });
+
+            closeBtn.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
+    
+    
+    </body>
+    
+    </html>
