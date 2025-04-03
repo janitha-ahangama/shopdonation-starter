@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '#prevCause',
                 },
                 breakpoints: {
-                    1280: { slidesPerView: 4, slidesPerGroup: 4 },
+                    1400: { slidesPerView: 4, slidesPerGroup: 4 },
                     1024: { slidesPerView: 3, slidesPerGroup: 3 },
                     640: { slidesPerView: 2, slidesPerGroup: 2 },
                     0: { slidesPerView: 1, slidesPerGroup: 1 }
