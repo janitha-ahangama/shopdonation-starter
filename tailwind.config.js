@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
       },
+      screens: {
+        '2xl': '1536px', 
+        '3xl': '1800px', 
+      }
     },
   },
   variants: {

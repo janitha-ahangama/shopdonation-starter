@@ -104,16 +104,13 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('./src/data/data.json')
         .then(response => response.json())
         .then(data => {
-            const carouselData = data.causeCarousel; // Change this to the desired carousel array
-            const mobileCauseCarousel = document.getElementById('mobileCauseCarousel');
-            const desktopCauseCarousel = document.getElementById('desktopCauseCarousel');
+            const carouselData = data.causeCarousel;
+            const swiperWrapper = document.querySelector('.swiper-wrapper');
+            swiperWrapper.innerHTML = '';
 
-            desktopCauseCarousel.innerHTML = '';
-            mobileCauseCarousel.innerHTML = '';
-
-            // First special desktop card
+            // First special card
             const firstCard = document.createElement('div');
-            firstCard.className = 'h-auto w-96 rounded-xl border-gray-50 border-solid border-2 shadow-lg flex flex-col justify-center items-center p-6 mx-auto';
+            firstCard.className = 'hidden sm:flex swiper-slide w-96 h-auto rounded-xl border-gray-50 border-solid border-2 shadow-lg  flex-col justify-center items-center p-6';
             firstCard.innerHTML = `
                 <div class="p-5">
                     <img src="./src/images/plus.png" alt="Register a new cause" class="w-32 mx-auto">
@@ -121,10 +118,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         Register a new cause on ShopDonation and start raising funds in 1 minute
                     </p>
                 </div>`;
-            desktopCauseCarousel.appendChild(firstCard);
+            swiperWrapper.appendChild(firstCard);
 
+            // Generate slides dynamically
             carouselData.forEach(item => {
-                const cardContent = `
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide w-96 h-auto rounded-xl bg-white shadow-lg flex flex-col justify-center items-center';
+                slide.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" class="w-full">
                     <div class="p-5">
                         <h2 class="text-green-600 text-2xl font-bold">${item.name}</h2>
@@ -138,60 +138,28 @@ document.addEventListener('DOMContentLoaded', function () {
                             Select this cause
                         </button>
                     </div>`;
+                swiperWrapper.appendChild(slide);
+            });
 
-                // Desktop version
-                const desktopSlide = document.createElement('div');
-                desktopSlide.className = 'h-full w-96 rounded-xl bg-white shadow-lg flex flex-col justify-center items-center';
-                desktopSlide.innerHTML =  `
-                <img src="${item.image}" alt="Cause1" class="w-full">
-                <div class="p-5">
-                            
-                    <h2 class="text-green-600 text-2xl font-bold">${item.name}</h2>
-                    <p class="text-gray-700 mt-2 mb-4 text-xl flex-grow">
-                        ${item.description}
-                    </p>
-                    <p class="text-green-600 font-bold mt-2 mb-4 text-xl flex-grow">
-                        <strong class="text-black">Raised: </strong>€ ${item.amount}
-                    </p>
-                    <button class="w-full text-white px-8 py-4 rounded-full font-semibold" style="background-color: #369936;">
-                        Select this cause
-                    </button>
-                </div>`;
-                desktopCauseCarousel.appendChild(desktopSlide);
-
-                // Mobile version
-                const mobileSlide = document.createElement('div');
-                mobileSlide.className = 'h-full min-w-full rounded-xl bg-white shadow-lg flex flex-col justify-center items-center';
-                mobileSlide.innerHTML =  `
-                <img src="${item.image}" alt="${item.name}" class="w-full">
-                <div class="p-5">
-                    <h2 class="text-green-600 text-2xl font-bold">${item.name}</h2>
-                    <p class="text-gray-700 mt-2 mb-4 text-xl flex-grow">
-                        ${item.description}
-                    </p>
-                    <p class="text-green-600 font-bold mt-2 mb-4 text-xl flex-grow">
-                        <strong class="text-black">Raised: </strong>€ ${item.amount}
-                    </p>
-                    <button class="w-full text-white px-8 py-4 rounded-full font-semibold" style="background-color: #369936;">
-                        Select this cause
-                    </button>
-                </div>`;
-                mobileCauseCarousel.appendChild(mobileSlide);
+            // Initialize Swiper
+            new Swiper('.swiper-container', {
+                slidesPerView: 3, // Show exactly 3 slides
+                slidesPerGroup: 3, // Move 3 slides at a time
+                spaceBetween: 20,
+                loop: false,
+                navigation: {
+                    nextEl: '#nextCause',
+                    prevEl: '#prevCause',
+                },
+                breakpoints: {
+                    1280: { slidesPerView: 4, slidesPerGroup: 4 },
+                    1024: { slidesPerView: 3, slidesPerGroup: 3 },
+                    640: { slidesPerView: 2, slidesPerGroup: 2 },
+                    0: { slidesPerView: 1, slidesPerGroup: 1 }
+                }
             });
         })
         .catch(error => console.error('Error fetching data:', error));
-
-    const prevAssets = document.getElementById('prevCause');
-    const nextAssets = document.getElementById('nextCause');
-    const causeCarousel = document.getElementById('mobileCauseCarousel');
-
-    prevAssets.addEventListener('click', () => {
-        causeCarousel.scrollBy({ left: -causeCarousel.clientWidth, behavior: 'smooth' });
-    });
-
-    nextAssets.addEventListener('click', () => {
-        causeCarousel.scrollBy({ left: causeCarousel.clientWidth, behavior: 'smooth' });
-    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {

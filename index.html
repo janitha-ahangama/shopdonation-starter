@@ -12,13 +12,15 @@
         rel="stylesheet">
 
     <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -72,13 +74,13 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative text-white sm:h-[80vh] h-[70vh] flex items-center justify-start w-full px-6 sm:px-80"
+    <section class="relative text-white sm:h-[80vh] h-[70vh] flex items-center justify-start w-full px-6 2xl:px-80 xl:px-40 lg:px-20 md:px-10"
         style="background: linear-gradient(85.13deg, #083B62 8.5%, #083B62 8.51%, #369936 100.13%);">
     
         <!-- Left Content -->
         <div class="max-w-xl text-left text-white sm:z-0 z-10">
-            <h1 class="text-3xl sm:text-5xl font-bold">Shop & Give back</h1>
-            <p class="mt-4 text-base sm:text-2xl">
+            <h1 class="text-3xl lg:text-5xl md:text-4xl font-bold">Shop & Give back</h1>
+            <p class="mt-4 text-base lg:text-2xl md:text-xl">
                 Our stores will donate to your chosen cause, <br />every time you shop online using ShopDonation,<br />
                 with no extra cost.
             </p>
@@ -96,8 +98,8 @@
             </div>
     
             <!-- Large Screens -->
-            <div class="hidden sm:block absolute bottom-0 right-0 pt-16 pr-72">
-                <img src="./src/images/img-Hero.png" alt="Happy person shopping" class="w-auto max-h-full">
+            <div class="hidden sm:block absolute bottom-0 right-0 pt-16 2xl:pr-72 xl:pr-40 lg:pr-20 md:pr-10">
+                <img src="./src/images/img-Hero.png" alt="Happy person shopping" class="w-auto h-[70vh]">
             </div>
         </div>
     
@@ -113,11 +115,15 @@
             <div class="flex justify-center items-center mt-4">
                 <!-- Left Arrow -->
                 <button id="prev" class="swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 sm:absolute sm:left-0 sm:top-1/3 sm:transform sm:-translate-y-1/2 sm:shadow-lg sm:z-10">
-                    <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-lime-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
                 </button>
                 <!-- Right Arrow -->
                 <button id="next" class="swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4 sm:absolute sm:right-0 sm:top-1/3 sm:transform sm:-translate-y-1/2 sm:shadow-lg sm:z-10">
-                    <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-lime-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
                 </button>
             </div>
         </div>
@@ -178,47 +184,23 @@
         
 
         <!-- Section 3 -->
-        <section class="w-full py-12 bg-cover bg-center">
+        <section class="w-full py-12 bg-cover bg-center text-center">
             <h2 class="text-gray-200 mx-14 pb-12 sm:text-4xl text-2xl font-bold text-center">Most popular causes last 30 days</h2>
-            <div class="sm:relative sm:w-4/5 max-w-8xl mx-auto text-center px-6 md:px-0">
-                <div class="relative">
-
-                    <!-- Desktop Carousel -->
-                    <div class="hidden md:flex relative w-full mx-auto space-x-4 px-12" id="desktopCauseCarousel">
-                        <!-- Cards will be injected by JavaScript -->
-                    </div>
-
-                    <!-- Mobile Carousel -->
-                    <div id="mobileCauseCarousel" class="md:hidden flex overflow-hidden w-full">
-                        <!-- Cards will be injected by JavaScript -->
-                    </div>
-
-                    <div class="col-span-3 flex justify-center mt-6">
-                        <!-- Left Arrow -->
-                        <button id="prevCause"
-                            class="md:hidden swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600">
-                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F868;</span>
-                        </button>
-                        <!-- Right Arrow -->
-                        <button id="nextCause"
-                            class="md:hidden swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4">
-                            <span class="text-lime-600 hover:text-white text-2xl">&#x1F86A;</span>
-                        </button>
-                    </div>
+            <div class="swiper-container max-w-screen-2xl px-4 sm:px-6 lg:px-8 mx-auto justify-center text-center relative overflow-hidden">
+                <div class=" swiper-wrapper">
+                    <!-- Cards will be injected by JavaScript -->
                 </div>
-            </div>
-            <!-- See all stores -->
-            <div class="mt-6 flex justify-center sm:justify-end sm:mx-44">
-                <a href="#" class="text-center sm:text-right sm:items-end text-gray-200 text-base font-semibold flex items-center">
-                    See all causes &#x1F86A;
-                </a>
-            </div>
-
-            <!-- Register new cause -->
-            <div class="sm:hidden mt-6 flex justify-center">
-                <a href="#" class="text-center text-gray-200 text-base font-semibold flex items-center">
-                    Register a new cause &#x1F86A;
-                </a>
+                <!-- Navigation Arrows (Existing Arrows) -->
+                <div class="col-span-3 flex justify-center mt-6">
+                    <button id="prevCause"
+                        class="swiper-button-prev group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600">
+                        <!-- <span class="text-lime-600 group-hover:text-white text-2xl">&#x1F868;</span> -->
+                    </button>
+                    <button id="nextCause"
+                        class="swiper-button-next group !p-3 flex justify-center items-center border border-solid !w-14 !h-14 transition-all duration-500 rounded-full bg-white shadow-xl hover:bg-lime-600 ml-4">
+                        <!-- <span class="text-lime-600 group-hover:text-white text-2xl">&#x1F86A;</span> -->
+                    </button>
+                </div>
             </div>
         
         </section>
@@ -618,7 +600,7 @@
                         <div class="flex flex-col md:flex-row items-center">
                             <input type="email" id="email" placeholder="Enter email address"
                                 class="w-full  text-sm  px-4 py-2 md:mr-3 rounded-md text-black border border-gray-200 focus:ring-2 focus:ring-gray-500 outline-none mb-3 md:mb-0">
-                            <button class="w-full md:w-1/4 px-6 py-2 text-base rounded-full text-white hover:bg-lime-600" style="background-color: #369936;">
+                            <button class="w-full md:w-1/4 px-3 py-2 text-base rounded-full text-white hover:bg-lime-600" style="background-color: #369936;">
                                 Subscribe
                             </button>
                         </div>
